@@ -1,0 +1,42 @@
+.btn {
+  border: none;
+  height: 35px;
+  width: 150px;
+  border-radius: 7px;
+  color: #f8f9fa;
+  transition: 0.3s all;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.greenBtn {
+  background-color: #386641;
+}
+.greenBtn:hover {
+  background-color: #4c7554;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.redBtn {
+  background-color: #bc4749;
+}
+.redBtn:hover {
+  background-color: #c3595b;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.createBtn {
+  background-color: #f2e8cf;
+}
+.createBtn:hover {
+  background-color: #f3ead4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.updateBtn {
+  background-color: #00afb9;
+}
+.updateBtn:hover {
+  background-color: #1ab7c0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
