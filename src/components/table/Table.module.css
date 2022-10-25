@@ -1,0 +1,12 @@
+.tableHead {
+  display: flex;
+  column-gap: 5px;
+}
+
+.tableHeader {
+  flex-basis: 25%;
+  font-weight: 600;
+  padding-bottom: 5px;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+}
