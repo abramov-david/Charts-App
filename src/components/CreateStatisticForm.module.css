@@ -1,0 +1,33 @@
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.inputItem {
+  position: relative;
+  flex-basis: 33.33%;
+}
+
+.inputItem input {
+  height: 35px;
+  padding-left: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #c1c4c7;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputItem label {
+  position: absolute;
+  top: -7px;
+  left: 10px;
+  background-color: white;
+  font-size: 12px;
+  padding: 0 5px;
+  font-weight: 600;
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "../UI/Button";
 import classes from "./Table.module.css";
 import TableItem from "./TableItem";
 
@@ -35,7 +34,6 @@ export default function Table() {
           );
         })}
       </section>
-      <Button title="add" click={() => console.log("add")} classBtn="addBtn" />
     </div>
   );
 }

@@ -2,13 +2,25 @@ import React from "react";
 import Charts from "./components/Charts";
 import Table from "./components/table/Table";
 import classes from "./App.module.css";
+import Modal from "./components/UI/Modal";
+import CreateStatisticForm from "./components/CreateStatisticForm";
 
 function App() {
   return (
-    <div className={classes.app}>
-      <Charts />
-      <Table />
-    </div>
+    <>
+      <Modal
+        title="Create new statistic"
+        onClose={() => {
+          "Close it bitch";
+        }}
+      >
+        <CreateStatisticForm />
+      </Modal>
+      <div className={classes.app}>
+        <Charts />
+        <Table />
+      </div>
+    </>
   );
 }
 
