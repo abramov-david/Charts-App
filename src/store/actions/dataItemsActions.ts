@@ -1,17 +1,13 @@
 import { AppDispatch } from "../index";
 import axios from "../../axios";
-import { Idata } from "../../models/models";
+import { Idata, sendData } from "../../models/models";
 import { dataSlice } from "../slices/dataSlice";
-
-interface sendData {
-  id: string;
-}
 
 export const fetchData = () => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(dataSlice.actions.fetching());
-      const response = await axios.get<Idata[]>("/cstest/davidAbramov");
+      const response = await axios.get<Idata[]>("/cstest/davidAbrmov");
       dispatch(dataSlice.actions.fetchSuccess(response.data));
     } catch (error) {
       dispatch(dataSlice.actions.fetchError(error as Error));
@@ -33,11 +29,11 @@ export const sendDataAction = (data: Idata) => {
   };
 };
 
-export const deleteDataAction = (data: number) => {
+export const deleteDataAction = (data: string) => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(dataSlice.actions.deleteData(data));
-      await axios.delete<number>(`/cstest/davidAbramov/${data}`);
+      await axios.delete<string>(`/cstest/davidAbramov/${data}`);
     } catch (error) {
       console.log("error", error);
     }
@@ -50,11 +46,16 @@ export const getUpdateItem = (data: string) => {
   };
 };
 
-export const updateDataAction = (data: number) => {
+export const updateDataAction = (data: Idata, id: string) => {
   return async (dispatch: AppDispatch) => {
     try {
-      dispatch(dataSlice.actions.updateData(data));
-      const response = await axios.put<number>(`/cstest/davidAbramov/${data}`);
+      dispatch(dataSlice.actions.updating());
+      const response = await axios.put<Idata>(
+        `/cstest/davidAbramov/${id}`,
+        data
+      );
+      dispatch(dataSlice.actions.updateData(response.data));
+      dispatch(dataSlice.actions.updatingSuccess());
     } catch (error) {
       console.log("error", error);
     }

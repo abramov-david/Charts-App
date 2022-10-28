@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { openModal, showCreate } from "../../store/actions/modalActions";
 
 export default function Table() {
-  const { error, loading, items, sending } = useAppSelector(
+  const { error, loading, items, sending, updating } = useAppSelector(
     (state) => state.dataFetchReducer
   );
   const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ export default function Table() {
   return (
     <>
       <div className={classes.table}>
-        <h1>Statistic</h1>
+        <h2>Charts data</h2>
         <section className={classes.tableHead}>
           <div className={classes.tableHeader}>Year</div>
           <div className={classes.tableHeader}>Starting rent</div>
@@ -41,7 +41,7 @@ export default function Table() {
         </section>
         <Button title="create" click={addHandler} classBtn="createBtn" />
         {sending && (
-          <div className={classes.sending}>
+          <div className={`${classes.status} ${classes.status__sending}`}>
             <svg
               width="40px"
               height="40px"
@@ -66,6 +66,106 @@ export default function Table() {
               </path>
             </svg>
             <p>Creating...</p>
+          </div>
+        )}
+        {updating && (
+          <div className={`${classes.status} ${classes.status__updating}`}>
+            <svg
+              width="40px"
+              height="40px"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="xMidYMid"
+            >
+              <rect x="19" y="19" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="40" y="19" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.125s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="61" y="19" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.25s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="19" y="40" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.875s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="61" y="40" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.375s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="19" y="61" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.75s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="40" y="61" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.625s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+              <rect x="61" y="61" width="20" height="20" fill="#1d3f72">
+                <animate
+                  attributeName="fill"
+                  values="#5699d2;#1d3f72;#1d3f72"
+                  keyTimes="0;0.125;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                  begin="0.5s"
+                  calcMode="discrete"
+                ></animate>
+              </rect>
+            </svg>
+            <p>Updating...</p>
           </div>
         )}
       </div>

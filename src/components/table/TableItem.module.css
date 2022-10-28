@@ -2,13 +2,20 @@
   display: flex;
   text-align: center;
   align-items: center;
+  row-gap: 10px;
   margin: 10px 0;
   border-bottom: 1px solid #e9ecef;
   padding-bottom: 10px;
+  position: relative;
+}
+
+.tableItem div {
+  flex-basis: 25%;
 }
 
 .btns {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }

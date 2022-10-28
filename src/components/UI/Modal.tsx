@@ -19,7 +19,7 @@ export default function Modal({ children, title }: ModalProps) {
     <>
       <div className={classes.backdrop} onClick={clickHandler} />
       <div className={classes.modal}>
-        <h1>{title}</h1>
+        <h1 className={classes.title}>{title}</h1>
         {children}
       </div>
     </>

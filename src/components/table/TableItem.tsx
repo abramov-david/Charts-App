@@ -25,7 +25,7 @@ export default function TableItem({ year, sr, er, id }: TableItemProps) {
   };
 
   const deleteHandler = () => {
-    dispatch(deleteDataAction(parseInt(id || "")));
+    dispatch(deleteDataAction(id || ""));
   };
   return (
     <div className={classes.tableItem}>

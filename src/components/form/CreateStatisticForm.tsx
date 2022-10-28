@@ -4,7 +4,10 @@ import Button from "../UI/Button";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { closeModal } from "../../store/actions/modalActions";
 import { useState } from "react";
-import { sendDataAction } from "../../store/actions/dataItemsActions";
+import {
+  sendDataAction,
+  updateDataAction,
+} from "../../store/actions/dataItemsActions";
 
 export default function CreateStatisticForm() {
   const dispatch = useAppDispatch();
@@ -39,12 +42,18 @@ export default function CreateStatisticForm() {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(closeModal());
-    let res = {
+
+    let userdata = {
       year: parseInt(userYear),
       startingRent: parseInt(userSr),
       effectiveRent: parseInt(userEr),
     };
-    dispatch(sendDataAction(res));
+
+    if (isCreate) {
+      dispatch(sendDataAction(userdata));
+    } else {
+      dispatch(updateDataAction(userdata, updatedItem?.id || ""));
+    }
   };
 
   return (

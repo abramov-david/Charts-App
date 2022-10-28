@@ -22,6 +22,16 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1000px) {
+  .inputs {
+    flex-direction: column;
+  }
+  .inputItem {
+    position: relative;
+    width: 100%;
+  }
+}
+
 .inputItem label {
   position: absolute;
   top: -7px;

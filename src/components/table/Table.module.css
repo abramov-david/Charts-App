@@ -1,10 +1,19 @@
 .table {
   position: relative;
+  flex-basis: 50%;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1250px) {
+  .table {
+    width: 100%;
+  }
 }
 
 .tableHead {
   display: flex;
   column-gap: 5px;
+  justify-content: space-between;
 }
 
 .tableHeader {
@@ -15,11 +24,22 @@
   border-bottom: 1px solid #e9ecef;
 }
 
+@media screen and (max-width: 1310px) {
+  .tableHeader {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .tableHeader {
+    font-size: 11px;
+  }
+}
+
 .table button {
   margin-top: 20px;
 }
 
-.sending {
+.status {
   position: absolute;
   bottom: -7px;
   right: 56px;
@@ -28,4 +48,11 @@
   align-items: center;
   column-gap: 10px;
   font-size: 14px;
+}
+
+.status__sending {
+  color: #b08968;
+}
+.status__updating {
+  color: #1d3f72;
 }
