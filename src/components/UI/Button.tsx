@@ -3,8 +3,9 @@ import classes from "./Button.module.css";
 
 interface btnProps {
   title: string;
-  click: () => void;
+  click?: () => void;
   classBtn: string;
+  type?: string;
 }
 
 export default function Button({ title, click, classBtn }: btnProps) {

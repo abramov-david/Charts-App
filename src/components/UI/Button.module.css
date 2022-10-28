@@ -29,10 +29,10 @@
 }
 
 .createBtn {
-  background-color: #f2e8cf;
+  background-color: #b08968;
 }
 .createBtn:hover {
-  background-color: #f3ead4;
+  background-color: #b89577;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
