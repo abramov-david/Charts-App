@@ -7,7 +7,7 @@ export const fetchData = () => {
   return async (dispatch: AppDispatch) => {
     try {
       dispatch(dataSlice.actions.fetching());
-      const response = await axios.get<Idata[]>("/cstest/davidAbrmov");
+      const response = await axios.get<Idata[]>("/cstest/davidAbramov");
       dispatch(dataSlice.actions.fetchSuccess(response.data));
     } catch (error) {
       dispatch(dataSlice.actions.fetchError(error as Error));

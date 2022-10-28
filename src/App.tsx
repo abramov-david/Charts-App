@@ -6,6 +6,7 @@ import Modal from "./components/UI/Modal";
 import CreateStatisticForm from "./components/form/CreateStatisticForm";
 import { fetchData } from "./store/actions/dataItemsActions";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
+import logo from "./assets/logo.png";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -26,9 +27,12 @@ function App() {
 
   return (
     <>
-      <div className={classes.title}>
-        <h1>Statistic React App</h1>
-        <p>React.js,Redux,Typescript,Recharts</p>
+      <div className={classes.mainTitle}>
+        <div className={classes.title}>
+          <h1>Statistic React App</h1>
+          <p>React.js,Redux,Typescript,Recharts</p>
+        </div>
+        <img src={logo} alt="" />
       </div>
       {isModal && (
         <Modal title={modalText}>

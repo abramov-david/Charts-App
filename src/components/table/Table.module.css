@@ -41,8 +41,8 @@
 
 .status {
   position: absolute;
-  bottom: -7px;
-  right: 56px;
+  bottom: 25px;
+  right: 0;
   color: #d88c51;
   display: flex;
   align-items: center;

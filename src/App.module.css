@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  min-height: 100vh;
   column-gap: 50px;
   max-width: 100%;
 }
@@ -38,8 +37,6 @@
 
 .title {
   margin: 0;
-  padding: 40px 0 0 40px;
-  margin-bottom: 60px;
 }
 .title p {
   font-weight: 200;
@@ -77,4 +74,24 @@
   font-weight: 600;
   margin: 0;
   padding-top: 20px;
+}
+
+.mainTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+.mainTitle img {
+  max-width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .mainTitle img {
+    max-width: 100px;
+  }
+  .title h1 {
+    font-size: 20px;
+  }
 }
