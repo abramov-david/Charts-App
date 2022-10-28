@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Charts from "./components/charts/Charts";
 import Table from "./components/table/Table";
 import classes from "./App.module.css";
@@ -15,11 +15,19 @@ function App() {
   );
   const { isModal, isCreate } = useAppSelector((state) => state.modalReducer);
   const modalText = isCreate ? "Create new statistic" : "Update statistic";
-  const [fail, setFail] = useState(false);
 
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
+
+  //hide scroll when modal open
+  useEffect(() => {
+    if (isModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [isModal]);
 
   const loadingStatus = loading && !isError;
   const errorStatus = !loading && isError;
